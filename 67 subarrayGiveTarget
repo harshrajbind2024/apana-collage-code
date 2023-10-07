@@ -1,0 +1,104 @@
+//   m-3 apana collage
+
+
+
+
+
+
+//   m-2  run
+/* A simple program to print subarray
+with sum as given sum */
+#include <bits/stdc++.h>
+using namespace std;
+
+/* Returns true if the there is a subarray
+of arr[] with sum equal to 'sum' otherwise
+returns false. Also, prints the result */
+void subArraySum(int arr[], int n, int sum)
+{
+
+	// Pick a starting point
+	for (int i = 0; i < n; i++) {
+		int currentSum = arr[i];
+
+		if (currentSum == sum) {
+			cout << "Sum found at indexes " << i << endl;
+			return;
+		}
+		else {
+			// Try all subarrays starting with 'i'
+			for (int j = i + 1; j < n; j++) {
+				currentSum += arr[j];
+
+				if (currentSum == sum) {
+					cout << "Sum found between indexes "
+						<< i << " and " << j << endl;
+					return;
+				}
+			}
+		}
+	}
+	cout << "No subarray found";
+	return;
+}
+
+// Driver Code
+int main()
+{
+	int arr[] = { 15, 2, 4, 8, 9, 5, 10, 23 };
+	int n = sizeof(arr) / sizeof(arr[0]);
+	int sum = 22;
+	subArraySum(arr, n, sum);
+	return 0;
+}
+
+// This code is contributed
+// by rathbhupendra
+
+
+
+
+
+
+
+//   m-1  self   wrong
+#include<bits/stdc++.h> 
+using namespace std; 
+
+void subArray(int arr[], int n,int target) 
+{ 
+	for (int i=0; i <n; i++) 
+	{ 
+		for (int j=i; j<n; j++) 
+		{  
+            int curr=0;
+			 
+			for (int k=i; k<=j; k++) {
+               // cout << arr[k] << " "; 
+                 curr+= arr[k];
+            }
+			//cout<<curr<<endl;
+			cout<<"compair";
+             if(curr==target){
+				cout<<"target is prasent";
+				break;
+			 }else{
+				cout<<"target is not prasent";
+				break;
+			 }
+				
+
+			cout << endl; 
+		} 
+	} 
+} 
+
+int main() 
+{ 
+	int arr[] = {1, 2, 3, 4}; 
+	int n = sizeof(arr)/sizeof(arr[0]); 
+	int target=9;
+	cout << "All Non-empty Subarrays\n"; 
+	subArray(arr, n,target); 
+	return 0; 
+} 

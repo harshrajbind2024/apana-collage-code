@@ -1,0 +1,65 @@
+// apana collage
+//  m-3  
+
+
+//   m-2 run
+/* C++ code to generate all possible subarrays/subArrays 
+	Complexity- O(n^3) */
+#include<bits/stdc++.h> 
+using namespace std; 
+
+void subArray(int arr[], int n) 
+{ 
+	for (int i=0; i <n; i++) 
+	{ 
+		for (int j=i; j<n; j++) 
+		{  
+            int curr=0;
+			 
+			for (int k=i; k<=j; k++) {
+                cout << arr[k] << " "; 
+                 curr+= arr[k];
+            }
+             cout<<" sum " <<curr;  
+				
+
+			cout << endl; 
+		} 
+	} 
+} 
+
+int main() 
+{ 
+	int arr[] = {1, 2, 3, 4}; 
+	int n = sizeof(arr)/sizeof(arr[0]); 
+	cout << "All Non-empty Subarrays\n"; 
+	subArray(arr, n); 
+	return 0; 
+} 
+
+
+//   m-1  wrong
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int n;
+    cin>>n;
+    int *arr=new int[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<"print ";
+    int curr=0;
+    for(int i=0;i<n;i++){
+           for(int j=i;j<n;j++){
+                for(int k=i;i<=j;k++){
+                   
+                   cout<<arr[k]<<" ";
+                }
+             cout<<endl;
+           }
+           cout<<endl;
+    }
+}
