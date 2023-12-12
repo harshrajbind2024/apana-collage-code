@@ -3,8 +3,10 @@
 
 
 //   m-2 run
+
 /* C++ code to generate all possible subarrays/subArrays 
 	Complexity- O(n^3) */
+    
 #include<bits/stdc++.h> 
 using namespace std; 
 
